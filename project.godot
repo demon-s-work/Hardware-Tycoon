@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="PU_Tycoon"
+config/name="Hardware-Tycoon"
 run/main_scene="res://Scenes/MainMenuScene.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="PU_Tycoon"
+project/assembly_name="Hardware Tycoon"
 
 [importer_defaults]
 
