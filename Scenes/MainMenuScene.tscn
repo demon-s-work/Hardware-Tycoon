@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://xag510beuuo8"]
+
+[ext_resource type="Theme" uid="uid://dd3a33ay021fb" path="res://Themes/MainTheme.tres" id="1_6f0vf"]
+[ext_resource type="Script" path="res://Scripts/GUI/MainMenu/PlayButton.cs" id="2_shoxx"]
+
+[node name="MainMenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6f0vf")
+theme_override_constants/separation = 50
+
+[node name="PlayButtonContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/PlayButtonContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+text = "Play"
+script = ExtResource("2_shoxx")
+
+[node name="SettingsButtonContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/SettingsButtonContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+text = "Settings"
+
+[node name="CreditsButtonContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer/CreditsButtonContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+text = "Credits"
+
+[node name="ExitButtonContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/ExitButtonContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme = ExtResource("1_6f0vf")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/PlayButtonContainer/PlayButton" to="VBoxContainer/PlayButtonContainer/PlayButton" method="_on_pressed"]
