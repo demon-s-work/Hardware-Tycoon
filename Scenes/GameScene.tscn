@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://rnh2qnr0muv3"]
+[gd_scene load_steps=5 format=3 uid="uid://rnh2qnr0muv3"]
 
 [ext_resource type="Theme" uid="uid://dd3a33ay021fb" path="res://Themes/MainTheme.tres" id="1_fwgsq"]
 [ext_resource type="Script" path="res://Scripts/GUI/Game/Header/DateLabel.cs" id="2_eldix"]
 [ext_resource type="Script" path="res://Scripts/GUI/Game/EditCpuPanel/Panel.cs" id="2_ho4fp"]
-[ext_resource type="Script" path="res://Scenes/Debug.cs" id="4_7wuvl"]
 [ext_resource type="Script" path="res://Scripts/Services/CurrentDateService.cs" id="4_wnvcq"]
 
 [node name="GameScene" type="Node2D"]
@@ -66,7 +65,6 @@ text = "X"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Create your own CPU"
-script = ExtResource("4_7wuvl")
 
 [node name="HSeparator" type="HSeparator" parent="Canvas/EditCpuPanel/MainLayout"]
 layout_mode = 2
