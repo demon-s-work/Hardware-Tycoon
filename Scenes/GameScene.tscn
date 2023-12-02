@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://rnh2qnr0muv3"]
+[gd_scene load_steps=3 format=3 uid="uid://rnh2qnr0muv3"]
 
 [ext_resource type="Theme" uid="uid://dd3a33ay021fb" path="res://Themes/MainTheme.tres" id="1_fwgsq"]
+[ext_resource type="Script" path="res://Scripts/GUI/Game/EditCpuPanel/Panel.cs" id="2_ho4fp"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -29,3 +30,70 @@ text = "Cash:"
 [node name="NewCpuButton" type="Button" parent="Canvas/HeaderContainer"]
 layout_mode = 2
 text = "CPU editor"
+
+[node name="EditCpuPanel" type="Panel" parent="Canvas"]
+anchors_preset = -1
+anchor_left = 0.074
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+theme = ExtResource("1_fwgsq")
+script = ExtResource("2_ho4fp")
+
+[node name="MainLayout" type="VBoxContainer" parent="Canvas/EditCpuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="GridContainer" parent="Canvas/EditCpuPanel/MainLayout"]
+layout_mode = 2
+columns = 2
+
+[node name="CloseButton" type="Button" parent="Canvas/EditCpuPanel/MainLayout/Header"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "X"
+
+[node name="LHeader" type="Label" parent="Canvas/EditCpuPanel/MainLayout/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Create your own CPU"
+
+[node name="HSeparator" type="HSeparator" parent="Canvas/EditCpuPanel/MainLayout"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Canvas/EditCpuPanel/MainLayout"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="LName" type="Label" parent="Canvas/EditCpuPanel/MainLayout/GridContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="IName" type="LineEdit" parent="Canvas/EditCpuPanel/MainLayout/GridContainer"]
+layout_mode = 2
+
+[node name="LArch" type="Label" parent="Canvas/EditCpuPanel/MainLayout/GridContainer"]
+layout_mode = 2
+text = "Architecture"
+
+[node name="IArch" type="OptionButton" parent="Canvas/EditCpuPanel/MainLayout/GridContainer"]
+layout_mode = 2
+
+[node name="LCores" type="Label" parent="Canvas/EditCpuPanel/MainLayout/GridContainer"]
+layout_mode = 2
+text = "Cores"
+
+[node name="ICores" type="SpinBox" parent="Canvas/EditCpuPanel/MainLayout/GridContainer"]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+alignment = 3
+update_on_text_changed = true
+
+[connection signal="pressed" from="Canvas/HeaderContainer/NewCpuButton" to="Canvas/EditCpuPanel" method="_on_new_cpu_button_pressed"]
+[connection signal="pressed" from="Canvas/EditCpuPanel/MainLayout/Header/CloseButton" to="Canvas/EditCpuPanel" method="_on_close_button_pressed"]
